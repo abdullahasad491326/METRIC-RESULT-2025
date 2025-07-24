@@ -1,138 +1,136 @@
-<!DOCTYPE html><html lang="ur">
+<!DOCTYPE html>
+<html lang="ur">
 <head>
   <meta charset="UTF-8">
-  <title>Punjab Matric Gazette 2025</title>
+  <title>پنجاب میٹرک رزلٹ 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    body {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      direction: rtl;
+      color: #ffffff;
+      padding: 20px;
+      margin: 0;
+    }
 
-body {
-  font-family: 'Noto Nastaliq Urdu', serif;
-  direction: rtl;
-  background: linear-gradient(270deg, #ff00cc, #3333ff, #00ffff, #ffcc00);
-  background-size: 800% 800%;
-  animation: bgChange 8s infinite linear;
-  color: #fff;
-  padding: 30px 20px;
-  text-align: center;
-}
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 30px;
+      text-shadow: 0 0 15px #0ff;
+      animation: glowText 2s infinite alternate;
+    }
 
-@keyframes bgChange {
-  0% { background-position: 0% 50%; }
-  25% { background-position: 25% 50%; }
-  50% { background-position: 50% 50%; }
-  75% { background-position: 75% 50%; }
-  100% { background-position: 100% 50%; }
-}
+    @keyframes glowText {
+      from { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; }
+      to   { text-shadow: 0 0 20px #f0f, 0 0 30px #ff0; }
+    }
 
-h1 {
-  font-size: 34px;
-  font-weight: bold;
-  margin-bottom: 40px;
-  text-shadow: 2px 2px 5px #000;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  max-width: 1200px;
-  margin: auto;
-}
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 10px #0ff;
+      transition: 0.3s;
+    }
 
-.card {
-  background: #111;
-  border-radius: 20px;
-  padding: 20px 15px;
-  box-shadow: 0 0 10px #00f, 0 0 20px #0ff, 0 0 30px #f0f;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  animation: neonPulse 1s infinite alternate;
-}
+    .card:hover {
+      box-shadow: 0 0 25px #0ff, 0 0 45px #f0f;
+      transform: scale(1.05);
+    }
 
-@keyframes neonPulse {
-  0% { box-shadow: 0 0 10px #00f, 0 0 20px #0ff, 0 0 30px #f0f; }
-  100% { box-shadow: 0 0 20px #f0f, 0 0 30px #ff0, 0 0 40px #0ff; }
-}
+    .board-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-.card:hover {
-  transform: scale(1.05);
-}
+    .download-btn {
+      display: inline-block;
+      background: #00fff2;
+      color: #000;
+      padding: 8px 12px;
+      border-radius: 30px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
 
-.board-name-urdu {
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff;
-}
+    .download-btn:hover {
+      background: #00ff91;
+    }
 
-.board-name-eng {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 5px;
-  color: #ccc;
-}
+    .whatsapp-channel {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999;
+    }
 
-.download-btn {
-  margin-top: 15px;
-  background: #0ff;
-  color: #000;
-  padding: 10px 18px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-}
+    .whatsapp-link {
+      background: linear-gradient(45deg, #25d366, #128C7E);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 15px #25d366;
+    }
 
+    .whatsapp-link:hover {
+      background: #1ebe5b;
+    }
   </style>
 </head>
-<body>  <h1>پنجاب کی تمام میٹرک گیزٹ 2025<br>Punjab All Matric Gazette 2025</h1>  <div class="container">
+<body>
+
+  <h1>🎓 پنجاب بورڈز میٹرک رزلٹ 2025</h1>
+
+  <div class="grid">
     <div class="card">
-      <div class="board-name-urdu">لاہور بورڈ</div>
-      <div class="board-name-eng">Lahore Board</div>
+      <div class="board-name">لاہور بورڈ</div>
       <a class="download-btn" href="https://example.com/lahore" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
     </div>
     <div class="card">
-      <div class="board-name-urdu">فیصل آباد بورڈ</div>
-      <div class="board-name-eng">Faisalabad Board</div>
+      <div class="board-name">فیصل آباد بورڈ</div>
       <a class="download-btn" href="https://example.com/faisalabad" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
     </div>
     <div class="card">
-      <div class="board-name-urdu">گوجرانوالہ بورڈ</div>
-      <div class="board-name-eng">Gujranwala Board</div>
+      <div class="board-name">گوجرانوالہ بورڈ</div>
       <a class="download-btn" href="https://example.com/gujranwala" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
     </div>
     <div class="card">
-      <div class="board-name-urdu">راولپنڈی بورڈ</div>
-      <div class="board-name-eng">Rawalpindi Board</div>
-      <a class="download-btn" href="https://example.com/rawalpindi" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
-    </div>
-    <div class="card">
-      <div class="board-name-urdu">سرگودھا بورڈ</div>
-      <div class="board-name-eng">Sargodha Board</div>
-      <a class="download-btn" href="https://example.com/sargodha" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
-    </div>
-    <div class="card">
-      <div class="board-name-urdu">ساہیوال بورڈ</div>
-      <div class="board-name-eng">Sahiwal Board</div>
-      <a class="download-btn" href="https://example.com/sahiwal" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
-    </div>
-    <div class="card">
-      <div class="board-name-urdu">ملتان بورڈ</div>
-      <div class="board-name-eng">Multan Board</div>
+      <div class="board-name">ملتان بورڈ</div>
       <a class="download-btn" href="https://example.com/multan" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
     </div>
     <div class="card">
-      <div class="board-name-urdu">بہاولپور بورڈ</div>
-      <div class="board-name-eng">Bahawalpur Board</div>
-      <a class="download-btn" href="https://drive.google.com/file/d/1fuVfGJ08WWzBuKvW4dCSLiy2D5tR5XBk/view?usp=drivesdk" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
+      <div class="board-name">ساہیوال بورڈ</div>
+      <a class="download-btn" href="https://example.com/sahiwal" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
     </div>
     <div class="card">
-      <div class="board-name-urdu">ڈی جی خان بورڈ</div>
-      <div class="board-name-eng">Dera Ghazi Khan Board</div>
-      <a class="download-btn" href="https://example.com/dgkhan" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
+      <div class="board-name">بہاولپور بورڈ</div>
+      <a class="download-btn" href="https://example.com/bahawalpur" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
     </div>
-  </div></body>
-      </html>
+    <!-- مزید بورڈز یہاں ایڈ کریں -->
+  </div>
+
+  <div class="whatsapp-channel">
+    <a class="whatsapp-link" href="https://whatsapp.com/channel/0029Vb9shWp4o7qPSrCXS603" target="_blank">
+      📢 واٹس ایپ چینل جوائن کریں
+    </a>
+  </div>
+
+</body>
+</html>
