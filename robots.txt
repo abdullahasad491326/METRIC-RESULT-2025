@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://texify.xyz/sitemap.xml
