@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PMT Score Checker</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+      padding: 1.5rem;
+      animation: floatCard 4s ease-in-out infinite;
+      backdrop-filter: blur(10px);
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: #00ffe7;
+      text-shadow: 0 0 10px #00ffe7;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: none;
+      background: #111;
+      color: #0ff;
+      box-shadow: 0 0 12px #0ff;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #000;
+      background: linear-gradient(90deg, #00ffe7, #0088ff);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #00ffe7, 0 0 25px #0088ff;
+      transition: transform 0.2s;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    .result {
+      margin-top: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ffe7;
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .result span {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .error {
+      color: #ff4c4c;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      text-align: center;
+      text-shadow: 0 0 6px red;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      input, button {
+        font-size: 1rem;
+        padding: 0.7rem;
+      }
+
+      .result {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🔍 PMT اسکور چیک کریں</h1>
+    <input type="text" id="cnic" placeholder="13 ہندسوں والا شناختی کارڈ نمبر" maxlength="13" />
+    <button id="checkBtn">اسکور چیک کریں</button>
+    <div id="output" class="result" hidden></div>
+    <div id="error" class="error"></div>
+  </div>
+
+  <script>
+    const btn = document.getElementById("checkBtn");
+    const output = document.getElementById("output");
+    const errorBox = document.getElementById("error");
+
+    btn.addEventListener("click", async () => {
+      const cnic = document.getElementById("cnic").value.trim();
+      output.hidden = true;
+      output.innerHTML = "";
+      errorBox.textContent = "";
+
+      if (!/^\d{13}$/.test(cnic)) {
+        errorBox.textContent = "⚠️ براہ کرم 13 ہندسوں والا درست CNIC درج کریں۔";
+        return;
+      }
+
+      const url = `https://api-schemes.government.com.pk/api/pmt-score/get-score?cnic=${cnic}`;
+
+      try {
+        btn.disabled = true;
+        btn.textContent = "چیک ہو رہا ہے...";
+
+        const resp = await fetch(url);
+        const data = await resp.json();
+
+        btn.disabled = false;
+        btn.textContent = "اسکور چیک کریں";
+
+        if (data.status && data.data?.found) {
+          const d = data.data;
+          output.innerHTML = `
+            <span><strong>CNIC:</strong> ${d.cnic}</span>
+            <span><strong>ID:</strong> ${d.id}</span>
+            <span><strong>PMT اسکور:</strong> <span style="color:#00ffe7; font-size: 1.2rem;">${d.score}</span></span>
+          `;
+          output.hidden = false;
+        } else {
+          errorBox.textContent = "❌ CNIC نہیں ملا یا غلط معلومات۔";
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = "اسکور چیک کریں";
+        errorBox.textContent = "❌ درخواست ناکام۔ دوبارہ کوشش کریں۔";
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+      </html>
