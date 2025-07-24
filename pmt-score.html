@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="ur">
+<!DOCTYPE html><html lang="ur">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,184 +6,179 @@
   <style>
     * {
       box-sizing: border-box;
-    }
+    }body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
+  background-attachment: fixed;
+  animation: bgCycle 20s infinite;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      min-height: 100vh;
-      padding: 1rem;
-    }
+@keyframes bgCycle {
+  0% { background-color: #300000; }
+  25% { background-color: #550000; }
+  50% { background-color: #7a0000; }
+  75% { background-color: #aa0000; }
+  100% { background-color: #300000; }
+}
 
-    .card {
-      width: 100%;
-      max-width: 400px;
-      background: rgba(0, 0, 0, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
-      padding: 1.5rem;
-      animation: floatCard 4s ease-in-out infinite;
-      backdrop-filter: blur(10px);
-    }
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+  padding: 2rem;
+  backdrop-filter: blur(15px);
+  animation: floatCard 6s ease-in-out infinite;
+}
 
-    @keyframes floatCard {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
 
-    h1 {
-      text-align: center;
-      font-size: 1.5rem;
-      margin-bottom: 1.2rem;
-      color: #00ffe7;
-      text-shadow: 0 0 10px #00ffe7;
-    }
+h1 {
+  text-align: center;
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+  color: #ff4c4c;
+  text-shadow: 0 0 12px #ff0000, 0 0 24px #ff0000;
+}
 
-    input {
-      width: 100%;
-      padding: 0.8rem;
-      font-size: 1rem;
-      border-radius: 10px;
-      border: none;
-      background: #111;
-      color: #0ff;
-      box-shadow: 0 0 12px #0ff;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
+input {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.05rem;
+  border-radius: 12px;
+  border: none;
+  background: rgba(0,0,0,0.8);
+  color: #ffcccc;
+  box-shadow: inset 0 0 10px #ff4c4c;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
 
-    button {
-      width: 100%;
-      padding: 0.8rem;
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: #000;
-      background: linear-gradient(90deg, #00ffe7, #0088ff);
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 0 12px #00ffe7, 0 0 25px #0088ff;
-      transition: transform 0.2s;
-    }
+button {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #ff4c4c, #aa0000);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff4c4c, 0 0 25px #aa0000;
+  transition: all 0.3s ease-in-out;
+}
 
-    button:active {
-      transform: scale(0.98);
-    }
+button:hover {
+  transform: scale(1.03);
+}
 
-    .result {
-      margin-top: 1.5rem;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #00ffe7;
-      font-size: 1rem;
-      line-height: 1.6;
-      text-align: left;
-    }
+.result {
+  margin-top: 1.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #ff4c4c;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: right;
+  direction: rtl;
+}
 
-    .result span {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
+.result span {
+  display: block;
+  margin-bottom: 0.7rem;
+}
 
-    .error {
-      color: #ff4c4c;
-      margin-top: 1rem;
-      font-size: 0.95rem;
-      text-align: center;
-      text-shadow: 0 0 6px red;
-    }
+.error {
+  color: #ff4c4c;
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  text-shadow: 0 0 8px red;
+}
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.3rem;
-      }
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+  }
 
-      input, button {
-        font-size: 1rem;
-        padding: 0.7rem;
-      }
+  input, button {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
 
-      .result {
-        font-size: 0.95rem;
-      }
-    }
+.whatsapp-button {
+  margin-top: 2rem;
+  text-align: center;
+}
 
-    .whatsapp-button {
-      margin-top: 2rem;
-      text-align: center;
-    }
+.whatsapp-button a {
+  display: inline-block;
+  padding: 0.9rem 1.6rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ff4c4c;
+  background: #000;
+  border: 2px solid #ff4c4c;
+  border-radius: 15px;
+  text-decoration: none;
+  box-shadow: 0 0 16px #ff4c4c;
+  transition: all 0.3s ease-in-out;
+}
 
-    .whatsapp-button a {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: #00ffe7;
-      background: #000;
-      border: 2px solid #00ffe7;
-      border-radius: 12px;
-      text-decoration: none;
-      box-shadow: 0 0 12px #00ffe7, 0 0 25px #00ffe7;
-      transition: all 0.3s ease-in-out;
-      text-shadow: 0 0 5px #00ffe7;
-    }
+.whatsapp-button a:hover {
+  transform: scale(1.05);
+  background-color: #111;
+}
 
-    .whatsapp-button a:hover {
-      transform: scale(1.05);
-    }
+.thanks {
+  margin-top: 2.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff9999;
+  text-shadow: 0 0 12px #ff9999, 0 0 18px #ff4c4c;
+  animation: glow 2s ease-in-out infinite alternate;
+  text-align: center;
+}
 
-    /* Thanks Footer */
-    .thanks {
-      margin-top: 2rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #00ffcc;
-      text-shadow: 0 0 8px #00ffcc, 0 0 12px #00ffcc;
-      animation: glow 2s ease-in-out infinite alternate;
-      text-align: center;
-    }
+@keyframes glow {
+  from {
+    text-shadow: 0 0 8px #ff9999, 0 0 16px #ff4c4c;
+  }
+  to {
+    text-shadow: 0 0 20px #ff9999, 0 0 35px #ff4c4c;
+  }
+}
 
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
-      }
-      to {
-        text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc;
-      }
-    }
   </style>
 </head>
-<body>
-
-  <div class="card">
+<body>  <div class="card">
     <h1>🔍 PMT اسکور چیک کریں</h1>
     <input type="text" id="cnic" placeholder="13 ہندسوں والا شناختی کارڈ نمبر" maxlength="13" />
     <button id="checkBtn">اسکور چیک کریں</button>
     <div id="output" class="result" hidden></div>
     <div id="error" class="error"></div>
-  </div>
-
-  <!-- WhatsApp Channel Button -->
-  <div class="whatsapp-button">
+  </div>  <div class="whatsapp-button">
     <a href="https://whatsapp.com/channel/0029Vb9shWp4o7qPSrCXS603" target="_blank">
       📢 WhatsApp چینل جوائن کریں
     </a>
-  </div>
-
-  <!-- Stylish Thanks Footer -->
-  <div class="thanks">
+  </div>  <div class="thanks">
     💖 شکریہ ہماری ویب سائٹ وزٹ کرنے کا!
-  </div>
-
-  <script>
+  </div>  <script>
     const btn = document.getElementById("checkBtn");
     const output = document.getElementById("output");
     const errorBox = document.getElementById("error");
@@ -195,7 +189,7 @@
       output.innerHTML = "";
       errorBox.textContent = "";
 
-      if (!/^\d{13}$/.test(cnic)) {
+      if (!/^[0-9]{13}$/.test(cnic)) {
         errorBox.textContent = "⚠️ براہ کرم 13 ہندسوں والا درست CNIC درج کریں۔";
         return;
       }
@@ -214,14 +208,19 @@
 
         if (data.status && data.data?.found) {
           const d = data.data;
+          const eligibility = d.score < 32
+            ? "<span style='color:#00ff00'>🎉 آپ گورنمنٹ اسکیمز کے لیے <strong>اہل</strong> ہیں</span>"
+            : "<span style='color:#ff4c4c'>❌ آپ گورنمنٹ اسکیمز کے لیے <strong>نااہل</strong> ہیں</span>";
+
           output.innerHTML = `
             <span><strong>CNIC:</strong> ${d.cnic}</span>
             <span><strong>PMT اسکور:</strong> ${d.score}</span>
             <span><strong>ID:</strong> ${d.id}</span>
+            <span>${eligibility}</span>
           `;
           output.hidden = false;
         } else {
-          errorBox.textContent = "🔍 اس CNIC کا ریکارڈ موجود نہیں۔";
+          errorBox.innerHTML = "🔍 آپ کا PMT اسکور <strong>موجود نہیں</strong>۔";
         }
       } catch (err) {
         btn.disabled = false;
@@ -229,6 +228,5 @@
         errorBox.textContent = "❌ سرور سے ڈیٹا حاصل نہیں ہو سکا۔ دوبارہ کوشش کریں۔";
       }
     });
-  </script>
-</body>
+  </script></body>
 </html>
