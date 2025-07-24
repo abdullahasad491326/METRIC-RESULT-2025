@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -116,6 +116,50 @@
         font-size: 0.95rem;
       }
     }
+
+    .whatsapp-button {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .whatsapp-button a {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #00ffe7;
+      background: #000;
+      border: 2px solid #00ffe7;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 0 12px #00ffe7, 0 0 25px #00ffe7;
+      transition: all 0.3s ease-in-out;
+      text-shadow: 0 0 5px #00ffe7;
+    }
+
+    .whatsapp-button a:hover {
+      transform: scale(1.05);
+    }
+
+    /* Thanks Footer */
+    .thanks {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #00ffcc;
+      text-shadow: 0 0 8px #00ffcc, 0 0 12px #00ffcc;
+      animation: glow 2s ease-in-out infinite alternate;
+      text-align: center;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+      }
+      to {
+        text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+      }
+    }
   </style>
 </head>
 <body>
@@ -126,6 +170,18 @@
     <button id="checkBtn">اسکور چیک کریں</button>
     <div id="output" class="result" hidden></div>
     <div id="error" class="error"></div>
+  </div>
+
+  <!-- WhatsApp Channel Button -->
+  <div class="whatsapp-button">
+    <a href="https://whatsapp.com/channel/0029Vb9shWp4o7qPSrCXS603" target="_blank">
+      📢 WhatsApp چینل جوائن کریں
+    </a>
+  </div>
+
+  <!-- Stylish Thanks Footer -->
+  <div class="thanks">
+    💖 شکریہ ہماری ویب سائٹ وزٹ کرنے کا!
   </div>
 
   <script>
@@ -160,20 +216,19 @@
           const d = data.data;
           output.innerHTML = `
             <span><strong>CNIC:</strong> ${d.cnic}</span>
+            <span><strong>PMT اسکور:</strong> ${d.score}</span>
             <span><strong>ID:</strong> ${d.id}</span>
-            <span><strong>PMT اسکور:</strong> <span style="color:#00ffe7; font-size: 1.2rem;">${d.score}</span></span>
           `;
           output.hidden = false;
         } else {
-          errorBox.textContent = "❌ CNIC نہیں ملا یا غلط معلومات۔";
+          errorBox.textContent = "🔍 اس CNIC کا ریکارڈ موجود نہیں۔";
         }
       } catch (err) {
         btn.disabled = false;
         btn.textContent = "اسکور چیک کریں";
-        errorBox.textContent = "❌ درخواست ناکام۔ دوبارہ کوشش کریں۔";
-        console.error(err);
+        errorBox.textContent = "❌ سرور سے ڈیٹا حاصل نہیں ہو سکا۔ دوبارہ کوشش کریں۔";
       }
     });
   </script>
 </body>
-      </html>
+</html>
