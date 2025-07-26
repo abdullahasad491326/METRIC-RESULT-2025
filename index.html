@@ -1,176 +1,177 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>پنجاب بورڈ میٹرک رزلٹ 2025</title>
-  <meta name="description" content="تمام پنجاب بورڈز کا میٹرک رزلٹ 2025 گیزٹ ڈاؤن لوڈ کریں۔ لاہور، فیصل آباد، ملتان، گوجرانوالہ، بہاولپور، ساہیوال، ڈی جی خان، سرگودھا، راولپنڈی بورڈز۔">
-  <meta name="keywords" content="Gazette 2025, میٹرک رزلٹ 2025, BISE Result, Lahore Board, Gujranwala Board, Multan, Faisalabad, Bahawalpur, Sahiwal, DG Khan, Sargodha, Punjab Boards">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAK Updates</title>
   <style>
+    :root {
+      --primary-color: #00ffd5;
+      --bg-gradient: linear-gradient(135deg, #0f0f0f, #202020);
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --text-color: #ffffff;
+      --accent: #ff00c8;
+    }
+
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      font-family: 'Noto Nastaliq Urdu', serif;
-      direction: rtl;
-      margin: 0;
-      padding: 30px 15px 80px;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      background-size: 400% 400%;
-      animation: gradientBG 12s ease infinite;
-      color: #e0e0e0;
+      font-family: "Segoe UI", sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-color);
+      padding: 1rem;
+      line-height: 1.6;
+    }
+
+    header {
       text-align: center;
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      font-weight: bold;
     }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 2rem;
     }
-    h1 {
-      font-size: 36px;
-      margin-bottom: 8px;
-      text-shadow: 0 0 10px #00e5ff;
-      letter-spacing: 1.2px;
+
+    .hero h1 {
+      font-size: 2rem;
+      color: var(--accent);
     }
-    h2 {
-      font-size: 18px;
-      margin-bottom: 30px;
-      color: #b0d1dc;
-      font-weight: 500;
-      letter-spacing: 0.6px;
+
+    .hero p {
+      font-size: 1rem;
+      color: #ccc;
     }
+
+    .btn-glow {
+      display: inline-block;
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      color: var(--primary-color);
+      text-decoration: none;
+      margin: 0.5rem;
+      transition: 0.3s;
+    }
+
+    .btn-glow:hover {
+      background-color: var(--primary-color);
+      color: #000;
+    }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 15px;
-      max-width: 900px;
-      margin: auto;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
     }
+
     .card {
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(12px);
-      border-radius: 12px;
-      padding: 12px 10px;
-      box-shadow: 0 0 8px #00bcd4aa;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #00ffd5;
+      text-align: center;
     }
-    .card:hover {
-      transform: scale(1.07);
-      box-shadow: 0 0 20px #00e5ffdd;
+
+    .card h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
     }
-    .board-name {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 4px;
-      color: #00e5ff;
-      text-shadow: 0 0 5px #00bcd4cc;
-    }
-    .board-name-eng {
-      font-size: 13px;
-      font-weight: 500;
-      margin-bottom: 10px;
-      color: #aad8e6;
-    }
-    .download-btn {
-      display: inline-block;
-      padding: 7px 14px;
-      background: linear-gradient(45deg, #00e5ff, #00bcd4);
-      color: #003344;
-      font-weight: 600;
-      font-size: 13px;
-      border-radius: 20px;
-      text-decoration: none;
-      box-shadow: 0 0 8px #00bcd4cc;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    .download-btn:hover {
-      background: linear-gradient(45deg, #00bcd4, #00838f);
-      color: #d0f0fb;
-      box-shadow: 0 0 15px #00e5ff;
-    }
-    .whatsapp-channel {
+
+    .fixed-button {
       position: fixed;
       bottom: 20px;
-      left: 20px;
+      right: 20px;
+      background-color: var(--accent);
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 15px #ff00c8;
       z-index: 999;
     }
-    .whatsapp-link {
-      background: linear-gradient(45deg, #25d366, #128C7E);
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 16px;
-      text-decoration: none;
-      box-shadow: 0 0 15px #25d366;
-      transition: background 0.3s ease;
-      user-select: none;
-    }
-    .whatsapp-link:hover {
-      background: #1ebe5b;
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+      }
+
+      .btn-glow {
+        padding: 0.4rem 1rem;
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
 <body>
-
-  <h1>All Punjab Matric Board Result 2025</h1>
-  <h2>پنجاب بورڈ میٹرک رزلٹ 2025</h2>
-
+  <header>📢 Welcome to PAK Updates</header>
+  <div class="hero">
+    <h1>Your Trusted Source for Government Scheme Updates</h1>
+    <p>We provide authentic, fast, and free information to help you apply for all government programs.</p>
+  </div>
   <div class="grid">
     <div class="card">
-      <div class="board-name">لاہور بورڈ</div>
-      <div class="board-name-eng">Lahore Board</div>
-      <a class="download-btn" href="https://drive.google.com/file/d/1Cq99oPxWRD6Oiki2j5DU2gQCImWvqs7s/view" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
+      <h3>Check PMT Score</h3>
+      <a class="btn-glow" href="https://texify.xyz/pmt-score" target="_blank">Check Now</a>
     </div>
     <div class="card">
-      <div class="board-name">فیصل آباد بورڈ</div>
-      <div class="board-name-eng">Faisalabad Board</div>
-      <a class="download-btn" href="https://drive.google.com/file/d/18kK-waum1TvAQhO-TvTh_U6dwcJ6mCEH/view" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
+      <h3>Network Checker</h3>
+      <a class="btn-glow" href="https://operator-checker.onrender.com" target="_blank">Check Now</a>
     </div>
     <div class="card">
-      <div class="board-name">گوجرانوالہ بورڈ</div>
-      <div class="board-name-eng">Gujranwala Board</div>
-      <a class="download-btn" href="https://drive.google.com/file/d/1i8u6g5A8tiUfzMybrz0DphIEayK_HdWA/view" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
-    </div>
-    <div class="card">
-      <div class="board-name">ملتان بورڈ</div>
-      <div class="board-name-eng">Multan Board</div>
-      <a class="download-btn" href="https://drive.google.com/file/d/1hgGk4EzszuXy-I2w8DjRmGui0bf38FgS/view" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
-    </div>
-    <div class="card">
-      <div class="board-name">ساہیوال بورڈ</div>
-      <div class="board-name-eng">Sahiwal Board</div>
-      <a class="download-btn" href="https://drive.google.com/file/d/1bSS4Zqc3E93Bz-nte8X_mgaWQnGk1Yp7/view" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
-    </div>
-    <div class="card">
-      <div class="board-name">بہاولپور بورڈ</div>
-      <div class="board-name-eng">Bahawalpur Board</div>
-      <a class="download-btn" href="https://drive.google.com/file/d/1O4OZuBwqxsf_wFnsWkNKm0FEf3r9GvaZ/view" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
-    </div>
-    <div class="card">
-      <div class="board-name">ڈی جی خان بورڈ</div>
-      <div class="board-name-eng">DG Khan Board</div>
-      <a class="download-btn" href="https://drive.google.com/file/d/13ccUenbRRbrQZ9j343LOWBVVPwf2gImw/view" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
-    </div>
-    <div class="card">
-      <div class="board-name">سرگودھا بورڈ</div>
-      <div class="board-name-eng">Sargodha Board</div>
-      <a class="download-btn" href="https://drive.google.com/file/d/1l-CF0oSYZAdmEyTGalvOogFbZBWpAisi/view" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
-    </div>
-    <div class="card">
-      <div class="board-name">راولپنڈی بورڈ</div>
-      <div class="board-name-eng">Rawalpindi Board</div>
-      <a class="download-btn" href="https://drive.google.com/file/d/1SJid7uKksPFuOp4unROv53Lt8teAj9kR/view" target="_blank">گیزٹ ڈاؤن لوڈ کریں</a>
+      <h3>More Services</h3>
+      <p>Coming Soon...</p>
     </div>
   </div>
 
-  <div class="whatsapp-channel">
-    <a class="whatsapp-link" href="https://whatsapp.com/channel/0029Vb9shWp4o7qPSrCXS603" target="_blank" rel="noopener">
-      📢 واٹس ایپ چینل جوائن کریں
-    </a>
-  </div>
+  <section style="margin-top: 2rem;">
+    <h2 style="color: var(--primary-color); font-size: 1.3rem;">Our Mission</h2>
+    <p style="color: #ccc; margin-top: 0.5rem;">
+      Our mission is to provide the latest updates on all Pakistani government schemes,
+      help users apply <strong>free of cost</strong>, and give them <strong>direct links</strong> to make the process fast and simple.
+    </p>
+  </section>
+  <section style="margin-top: 2rem;">
+    <h2 style="color: var(--primary-color); font-size: 1.3rem;">Contact Us</h2>
+    <form id="contactForm" style="margin-top: 1rem;">
+      <input type="text" placeholder="Your Name" required style="width: 100%; padding: 0.7rem; margin-bottom: 0.6rem;" />
+      <input type="email" placeholder="Your Email" required style="width: 100%; padding: 0.7rem; margin-bottom: 0.6rem;" />
+      <textarea placeholder="Your Message" required style="width: 100%; padding: 0.7rem; margin-bottom: 0.6rem;"></textarea>
+      <button type="submit" class="btn-glow">Send</button>
+      <div id="formMsg" style="margin-top: 1rem; color: var(--primary-color);"></div>
+    </form>
+  </section>
+  <a href="https://whatsapp.com/channel/0029Vb9shWp4o7qPSrCXS603" class="fixed-button">Join Channel</a>
 
+  <script>
+    const form = document.getElementById("contactForm");
+    const formMsg = document.getElementById("formMsg");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      formMsg.textContent = "Sending...";
+      setTimeout(() => {
+        formMsg.textContent = "Thank you! We'll reply soon.";
+        form.reset();
+      }, 1200);
+    });
+  </script>
 </body>
 </html>
