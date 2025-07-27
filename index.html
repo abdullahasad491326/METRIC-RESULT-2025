@@ -2,176 +2,257 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PAK Updates</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PAK Updates 3.0</title>
   <style>
+    /* Color Variables */
     :root {
-      --primary-color: #00ffd5;
-      --bg-gradient: linear-gradient(135deg, #0f0f0f, #202020);
-      --card-bg: rgba(255, 255, 255, 0.05);
-      --text-color: #ffffff;
-      --accent: #ff00c8;
+      --color-primary: #00ffd5;
+      --color-accent: #ff00c8;
+      --color-bg-dark1: #0f0f0f;
+      --color-bg-dark2: #202020;
+      --color-card-bg: rgba(255, 255, 255, 0.05);
+      --color-text-light: #eee;
+      --color-text-muted: #bbb;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* Reset and basics */
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
     }
 
     body {
-      font-family: "Segoe UI", sans-serif;
-      background: var(--bg-gradient);
-      color: var(--text-color);
-      padding: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--color-bg-dark1), var(--color-bg-dark2));
+      color: var(--color-text-light);
+      padding: 1rem 1.2rem 3rem;
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      user-select: text;
     }
 
     header {
       text-align: center;
-      padding: 0.5rem 1rem;
-      font-size: 1.2rem;
-      color: var(--primary-color);
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 12px;
-      margin-bottom: 1rem;
-      font-weight: bold;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--color-primary);
+      background: rgba(255 255 255 / 0.05);
+      border-radius: 16px;
+      padding: 0.6rem 1rem;
+      margin-bottom: 1.4rem;
+      text-shadow:
+        0 0 6px var(--color-primary),
+        0 0 12px var(--color-primary);
+      letter-spacing: 0.05em;
+      user-select: none;
     }
 
     .hero {
+      max-width: 720px;
+      margin: 0 auto 3rem;
       text-align: center;
-      margin-bottom: 2rem;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: 0.02em;
     }
 
     .hero h1 {
-      font-size: 2rem;
-      color: var(--accent);
+      font-size: 2.4rem;
+      color: var(--color-accent);
+      text-shadow:
+        0 0 10px var(--color-accent),
+        0 0 20px var(--color-accent);
+      margin-bottom: 0.4rem;
     }
 
     .hero p {
-      font-size: 1rem;
-      color: #ccc;
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      max-width: 540px;
+      margin: 0 auto;
+      user-select: text;
+      text-shadow: 0 0 5px rgba(255 255 255 / 0.1);
     }
 
-    .btn-glow {
-      display: inline-block;
-      background-color: transparent;
-      border: 2px solid var(--primary-color);
-      padding: 0.5rem 1.2rem;
-      border-radius: 50px;
-      color: var(--primary-color);
-      text-decoration: none;
-      margin: 0.5rem;
-      transition: 0.3s;
-    }
-
-    .btn-glow:hover {
-      background-color: var(--primary-color);
-      color: #000;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      padding: 1rem;
-      border-radius: 15px;
-      box-shadow: 0 0 10px #00ffd5;
-      text-align: center;
-    }
-
-    .card h3 {
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-    }
-
-    .fixed-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--accent);
-      color: #fff;
-      padding: 0.7rem 1.2rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 15px #ff00c8;
-      z-index: 999;
-    }
-
-    @media (max-width: 600px) {
+    @media (max-width: 480px) {
       .hero h1 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
       }
-
       .hero p {
-        font-size: 0.95rem;
-      }
-
-      .btn-glow {
-        padding: 0.4rem 1rem;
-        font-size: 0.95rem;
+        font-size: 1rem;
+        max-width: 100%;
+        padding: 0 1rem;
       }
     }
   </style>
 </head>
 <body>
   <header>📢 Welcome to PAK Updates</header>
-  <div class="hero">
+  <div class="hero" role="banner">
     <h1>Your Trusted Source for Government Scheme Updates</h1>
     <p>We provide authentic, fast, and free information to help you apply for all government programs.</p>
   </div>
-  <div class="grid">
-    <div class="card">
-      <h3>Check PMT Score</h3>
-      <a class="btn-glow" href="https://texify.xyz/pmt-score" target="_blank">Check Now</a>
-    </div>
-    <div class="card">
-      <h3>Network Checker</h3>
-      <a class="btn-glow" href="https://operator-checker.onrender.com" target="_blank">Check Now</a>
-    </div>
-    <div class="card">
-      <h3>More Services</h3>
-      <p>Coming Soon...</p>
-    </div>
-  </div>
+    <style>
+    /* Services grid container */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.4rem;
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      user-select: none;
+    }
 
-  <section style="margin-top: 2rem;">
-    <h2 style="color: var(--primary-color); font-size: 1.3rem;">Our Mission</h2>
-    <p style="color: #ccc; margin-top: 0.5rem;">
-      Our mission is to provide the latest updates on all Pakistani government schemes,
-      help users apply <strong>free of cost</strong>, and give them <strong>direct links</strong> to make the process fast and simple.
-    </p>
-  </section>
-  <section style="margin-top: 2rem;">
-    <h2 style="color: var(--primary-color); font-size: 1.3rem;">Contact Us</h2>
-    <form id="contactForm" style="margin-top: 1rem;">
-      <input type="text" placeholder="Your Name" required style="width: 100%; padding: 0.7rem; margin-bottom: 0.6rem;" />
-      <input type="email" placeholder="Your Email" required style="width: 100%; padding: 0.7rem; margin-bottom: 0.6rem;" />
-      <textarea placeholder="Your Message" required style="width: 100%; padding: 0.7rem; margin-bottom: 0.6rem;"></textarea>
-      <button type="submit" class="btn-glow">Send</button>
-      <div id="formMsg" style="margin-top: 1rem; color: var(--primary-color);"></div>
-    </form>
-  </section>
-  <a href="https://whatsapp.com/channel/0029Vb9shWp4o7qPSrCXS603" class="fixed-button">Join Channel</a>
+    /* Each card */
+    .card {
+      background: var(--color-card-bg);
+      padding: 1.2rem 1.4rem;
+      border-radius: 18px;
+      box-shadow:
+        0 0 12px var(--color-primary),
+        0 0 24px var(--color-accent);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .card:hover,
+    .card:focus-within {
+      box-shadow:
+        0 0 18px var(--color-primary),
+        0 0 36px var(--color-accent);
+      transform: translateY(-5px);
+      outline: none;
+    }
 
-  <script>
-    const form = document.getElementById("contactForm");
-    const formMsg = document.getElementById("formMsg");
+    /* Card heading */
+    .card h3 {
+      color: var(--color-primary);
+      margin-bottom: 0.8rem;
+      font-weight: 800;
+      font-size: 1.25rem;
+      text-shadow:
+        0 0 10px var(--color-primary);
+      user-select: text;
+    }
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      formMsg.textContent = "Sending...";
-      setTimeout(() => {
-        formMsg.textContent = "Thank you! We'll reply soon.";
-        form.reset();
-      }, 1200);
-    });
-  </script>
-</body>
-</html>
+    /* Neon glow button */
+    .btn-glow {
+      display: inline-block;
+      border-radius: 50px;
+      padding: 0.55rem 1.3rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--color-primary);
+      background: transparent;
+      border: 2.5px solid var(--color-primary);
+      text-decoration: none;
+      box-shadow:
+        0 0 10px var(--color-primary),
+        0 0 30px var(--color-accent);
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.4s ease,
+        transform 0.2s ease;
+      user-select: none;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .btn-glow:hover,
+    .btn-glow:focus {
+      background-color: var(--color-primary);
+      color: #000;
+      box-shadow:
+        0 0 15px var(--color-primary),
+        0 0 50px var(--color-accent);
+      transform: translateY(-3px);
+      outline: none;
+    }
+
+    /* Card paragraph (for coming soon) */
+    .card p {
+      color: var(--color-text-muted);
+      font-style: italic;
+      user-select: text;
+    }
+
+    @media (max-width: 480px) {
+      .card h3 {
+        font-size: 1.1rem;
+      }
+      .btn-glow {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
+
+  <main role="main" aria-label="Services">
+    <div class="grid">
+      <div class="card" tabindex="0">
+        <h3>Check PMT Score</h3>
+        <a class="btn-glow" href="https://texify.xyz/pmt-score" target="_blank" rel="noopener noreferrer" aria-label="Check PMT Score">Check Now</a>
+      </div>
+      <div class="card" tabindex="0">
+        <h3>Network Checker</h3>
+        <a class="btn-glow" href="https://operator-checker.onrender.com" target="_blank" rel="noopener noreferrer" aria-label="Check Network">Check Now</a>
+      </div>
+
+      <!-- Additional Services -->
+      <div class="card" tabindex="0">
+        <h3>HIMMAT CARD VERIFICATION</h3>
+        <a class="btn-glow" href="https://dpmis.punjab.gov.pk/himmatcard-verification" target="_blank" rel="noopener noreferrer" aria-label="Himmat Card Verification">Verify Now</a>
+      </div>
+      <div class="card" tabindex="0">
+        <h3>Punjab Social Protection Authority</h3>
+        <a class="btn-glow" href="https://pspa.punjab.gov.pk/online_eligibility_check" target="_blank" rel="noopener noreferrer" aria-label="Check Punjab Social Protection Eligibility">Check Eligibility</a>
+      </div>
+      <div class="card" tabindex="0">
+        <h3>Health CARD ELIGIBILITY CHECK</h3>
+        <a class="btn-glow" href="https://www.pmhealthprogram.gov.pk/check-your-eligibility/" target="_blank" rel="noopener noreferrer" aria-label="Health Card Eligibility Check">Check Eligibility</a>
+      </div>
+      <div class="card" tabindex="0">
+        <h3>Apni ZAMEEN APNA GHAR PROGRAM</h3>
+        <a class="btn-glow" href="https://azag.punjab.gov.pk/" target="_blank" rel="noopener noreferrer" aria-label="Apni Zameen Apna Ghar Program">Learn More</a>
+      </div>
+      <div class="card" tabindex="0">
+        <h3>RASHAN CARD PROGRAM</h3>
+        <a class="btn-glow" href="https://punjab.gov.pk/node/6441" target="_blank" rel="noopener noreferrer" aria-label="Rashan Card Program">Apply Now</a>
+      </div>
+      <div class="card" tabindex="0">
+        <h3>MINORITY CARD</h3>
+        <a class="btn-glow" href="https://mcard.punjab.gov.pk/login" target="_blank" rel="noopener noreferrer" aria-label="Minority Card Login">Login</a>
+      </div>
+      <div class="card" tabindex="0">
+        <h3>Livestock Card</h3>
+        <a class="btn-glow" href="https://punjab.gov.pk/cm-punjab-livestock-card" target="_blank" rel="noopener noreferrer" aria-label="Livestock Card">Apply Now</a>
+      </div>
+      <div class="card" tabindex="0">
+        <h3>Kissan Card</h3>
+        <a class="btn-glow" href="https://punjab.gov.pk/cm-kissan-card-scheme" target="_blank" rel="noopener noreferrer" aria-label="Kissan Card Scheme">Apply Now</a>
+      </div>
+      <div class="card" tabindex="0">
+        <h3>DHEE RANI PROGRAM</h3>
+        <a class="btn-glow" href="https://cmp.punjab.gov.pk/" target="_blank" rel="noopener noreferrer" aria-label="Dhee Rani Program">Learn More</a>
+      </div>
+      <div class="card" tabindex="0">
+        <h3>Global IT Certificate</h3>
+        <a class="btn-glow" href="https://certifications.pitb.gov.pk/" target="_blank" rel="noopener noreferrer" aria-label="Global IT Certificate">Get Certified</a>
+      </div>
+      <div class="card" tabindex="0">
+        <h3>GREEN TRACTOR SCHEME</h3>
+        <a class="btn-glow" href="https://gts.punjab.gov.pk/login" target="_blank" rel="noopener noreferrer" aria-label="Green Tractor Scheme">Login</a>
+      </div>
+      <div class="card" tabindex="0">
+        <h3>Punjab Social Economic Registry</h3>
+        <a class="btn-glow" href="https://pser.punjab.gov.pk/register" target="_blank" rel="noopener noreferrer" aria-label="Punjab Social Economic Registry">Register Now</a>
+      </div>
+      <div class="card" tabindex="0">
+        <h3>More Services</h3>
+        <p>Coming Soon...</p>
+      </div>
+    </div>
+  </main>
+  
