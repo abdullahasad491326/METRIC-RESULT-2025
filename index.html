@@ -255,4 +255,290 @@
       </div>
     </div>
   </main>
-  
+    <style>
+    /* Mission Section */
+    section.mission {
+      max-width: 720px;
+      margin: 3rem auto 3rem;
+      padding: 0 1rem;
+      text-align: center;
+      user-select: text;
+    }
+
+    section.mission h2 {
+      color: var(--color-primary);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      text-shadow:
+        0 0 10px var(--color-primary),
+        0 0 22px var(--color-primary);
+      letter-spacing: 0.05em;
+    }
+
+    section.mission p {
+      color: var(--color-text-muted);
+      font-size: 1.1rem;
+      line-height: 1.5;
+      max-width: 600px;
+      margin: 0 auto;
+      user-select: text;
+      text-shadow: 0 0 6px rgba(255 255 255 / 0.1);
+    }
+
+    /* Helpline Section */
+    section.helplines {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
+      user-select: text;
+    }
+
+    section.helplines h2 {
+      color: var(--color-primary);
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-shadow:
+        0 0 12px var(--color-primary),
+        0 0 28px var(--color-primary);
+      letter-spacing: 0.06em;
+    }
+
+    .helpline-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      user-select: text;
+    }
+
+    .helpline-list li {
+      background: var(--color-card-bg);
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      box-shadow:
+        0 0 10px var(--color-primary),
+        0 0 20px var(--color-accent);
+      color: var(--color-text-light);
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      user-select: text;
+      transition: transform 0.25s ease;
+      cursor: default;
+    }
+    .helpline-list li:hover,
+    .helpline-list li:focus {
+      transform: translateY(-5px);
+      outline: none;
+      box-shadow:
+        0 0 18px var(--color-primary),
+        0 0 38px var(--color-accent);
+    }
+
+    .helpline-title {
+      color: var(--color-primary);
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
+      text-shadow:
+        0 0 8px var(--color-primary);
+    }
+
+    .helpline-number {
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.04em;
+      user-select: text;
+      text-shadow:
+        0 0 8px var(--color-accent);
+    }
+
+    .helpline-status {
+      color: var(--color-primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-shadow:
+        0 0 6px var(--color-primary);
+      user-select: text;
+    }
+
+    @media (max-width: 480px) {
+      .helpline-list {
+        grid-template-columns: 1fr;
+      }
+      .helpline-list li {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+
+  <section class="mission" aria-label="Our Mission">
+    <h2>Our Mission</h2>
+    <p>
+      Our mission is to provide the latest updates on all Pakistani government schemes,
+      help users apply <strong>free of cost</strong>, and give them <strong>direct links</strong> to make the process fast and simple.
+    </p>
+  </section>
+
+  <section class="helplines" aria-label="Government Helplines">
+    <h2>Helplines</h2>
+    <ul class="helpline-list" role="list">
+      <li tabindex="0">
+        <div class="helpline-title">C&W (Communication & Works)</div>
+        <div class="helpline-number">04299030165</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Centralized Hotline - PRIDE</div>
+        <div class="helpline-number">1786</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Chief Minister Complaint Center</div>
+        <div class="helpline-number">0800-02345</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Citizen Facilitation Center</div>
+        <div class="helpline-number">0800-09100</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">CPC - Consumer Protection Council</div>
+        <div class="helpline-number">04299030123</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">DTS - Department of Tourist Services</div>
+        <div class="helpline-number">1421</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Ehsaas Rashan Riayat Program</div>
+        <div class="helpline-number">0800-05050</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">E- Pay Helpline</div>
+        <div class="helpline-number">04299030100</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">E-Procurement</div>
+        <div class="helpline-number">04299030160</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">e-Rozgar Training Program / NFTP</div>
+        <div class="helpline-number">0800-09897 / 04299030127</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">E-Stamping Punjab</div>
+        <div class="helpline-number">0800-08100</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">E-Stamping Sindh</div>
+        <div class="helpline-number">0800-77000</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Excise & Taxation</div>
+        <div class="helpline-number">0800-08786</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Labour & HR</div>
+        <div class="helpline-number">04299030062</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">LHC - Lahore High Court</div>
+        <div class="helpline-number">1134</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Livestock & Dairy Development</div>
+        <div class="helpline-number">0800-78686</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Mines & Minerals</div>
+        <div class="helpline-number">04299030122</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Overseas Pakistani Commission</div>
+        <div class="helpline-number">111-672-672</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Parks & Horticulture Authority</div>
+        <div class="helpline-number">1399</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">PEPRIS - School Education</div>
+        <div class="helpline-number">111-112-020</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">PHOTA - Punjab Human Organ Transplant</div>
+        <div class="helpline-number">04299030147 - 1109</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Population Welfare Department</div>
+        <div class="helpline-number">0800-79300</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Punjab Health Line</div>
+        <div class="helpline-number">0800-99000</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Punjab Metro Bus</div>
+        <div class="helpline-number">111-222-627</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">RUDA - Ravi Urban Development Authority</div>
+        <div class="helpline-number">04299030180</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">School Education</div>
+        <div class="helpline-number">111-112-020</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">TEVTA</div>
+        <div class="helpline-number">0800-83882</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">Traffic Police</div>
+        <div class="helpline-number">04299030130</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">UHS - University of Health Sciences</div>
+        <div class="helpline-number">111-333-366</div>
+        <div class="helpline-status">Active</div>
+      </li>
+      <li tabindex="0">
+        <div class="helpline-title">WASA</div>
+        <div class="helpline-number">1334</div>
+        <div class="helpline-status">Active</div>
+      </li>
+    </ul>
+      </section>
+        
