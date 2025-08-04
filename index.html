@@ -2,172 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PAK UPDATES</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Color Variables */
+    /* Global Variables & Reset */
     :root {
-      --color-primary: #00ffd5;
-      --color-accent: #ff00c8;
-      --color-bg-dark1: #0f0f0f;
-      --color-bg-dark2: #202020;
-      --color-card-bg: rgba(255, 255, 255, 0.05);
-      --color-text-light: #eee;
-      --color-text-muted: #bbb;
+      --color-primary: #0056b3; /* Deep Blue */
+      --color-primary-light: #007bff;
+      --color-accent: #28a745; /* Green */
+      --color-bg-light: #ffffff;
+      --color-bg-gray: #f8f9fa;
+      --color-card-bg: #ffffff;
+      --color-text-dark: #212529;
+      --color-text-muted: #6c757d;
     }
 
-    /* Reset and basics */
     *, *::before, *::after {
       margin: 0; padding: 0; box-sizing: border-box;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, var(--color-bg-dark1), var(--color-bg-dark2));
-      color: var(--color-text-light);
-      padding: 1rem 1.2rem 3rem;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--color-bg-gray);
+      color: var(--color-text-dark);
+      padding: 1.5rem 1rem 4rem;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      user-select: text;
+      position: relative;
     }
 
+    /* Animations */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideInUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+    .animate-slide-up { animation: slideInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+
+    /* Header */
     header {
       text-align: center;
-      font-weight: 900;
-      font-size: 1.4rem;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 5vw, 2rem);
       color: var(--color-primary);
-      background: rgba(255 255 255 / 0.05);
-      border-radius: 16px;
-      padding: 0.6rem 1rem;
-      margin-bottom: 1.4rem;
-      text-shadow:
-        0 0 6px var(--color-primary),
-        0 0 12px var(--color-primary);
-      letter-spacing: 0.05em;
+      background: var(--color-card-bg);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       user-select: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    header:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
+    /* Hero Section */
     .hero {
-      max-width: 720px;
-      margin: 0 auto 3rem;
+      max-width: 900px;
+      margin: 0 auto 4rem;
       text-align: center;
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: 0.02em;
+      line-height: 1.4;
     }
 
     .hero h1 {
-      font-size: 2.4rem;
-      color: var(--color-accent);
-      text-shadow:
-        0 0 10px var(--color-accent),
-        0 0 20px var(--color-accent);
-      margin-bottom: 0.4rem;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin-bottom: 0.8rem;
+      background-image: linear-gradient(45deg, var(--color-primary), var(--color-primary-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 3vw, 1.25rem);
       color: var(--color-text-muted);
-      max-width: 540px;
+      max-width: 650px;
       margin: 0 auto;
-      user-select: text;
-      text-shadow: 0 0 5px rgba(255 255 255 / 0.1);
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 1.75rem;
-      }
-      .hero p {
-        font-size: 1rem;
-        max-width: 100%;
-        padding: 0 1rem;
-      }
+      font-weight: 400;
     }
   </style>
 </head>
 <body>
-  <header>📢 Welcome to PAK Updates</header>
-  <div class="hero" role="banner">
-    <h1>Your Trusted Source for Government Scheme Updates</h1>
-    <p>We provide authentic, fast, and free information to help you apply for all government programs.</p>
+  <header class="animate-fade-in">PAK UPDATES</header>
+  <div class="hero animate-slide-up" role="banner">
+    <h1>Your Authentic Portal for Government Schemes</h1>
+    <p>We deliver verified, fast, and free information to simplify your access to all government programs.</p>
   </div>
     <style>
-    /* Services grid container */
+    /* Sections */
+    section {
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
+    }
+
+    /* Grid container */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.4rem;
-      max-width: 900px;
-      margin: 0 auto 3rem;
-      user-select: none;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
     /* Each card */
     .card {
       background: var(--color-card-bg);
-      padding: 1.2rem 1.4rem;
-      border-radius: 18px;
-      box-shadow:
-        0 0 12px var(--color-primary),
-        0 0 24px var(--color-accent);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      border: 1px solid #e9ecef;
     }
-    .card:hover,
-    .card:focus-within {
-      box-shadow:
-        0 0 18px var(--color-primary),
-        0 0 36px var(--color-accent);
+    .card:hover, .card:focus-within {
       transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
       outline: none;
+      border-color: var(--color-primary-light);
     }
 
     /* Card heading */
     .card h3 {
       color: var(--color-primary);
-      margin-bottom: 0.8rem;
-      font-weight: 800;
-      font-size: 1.25rem;
-      text-shadow:
-        0 0 10px var(--color-primary);
-      user-select: text;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      font-size: 1.15rem;
     }
 
-    /* Neon glow button */
-    .btn-glow {
+    /* Action button */
+    .btn-action {
       display: inline-block;
-      border-radius: 50px;
-      padding: 0.55rem 1.3rem;
-      font-weight: 700;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
       font-size: 1rem;
-      color: var(--color-primary);
-      background: transparent;
-      border: 2.5px solid var(--color-primary);
-      text-decoration: none;
-      box-shadow:
-        0 0 10px var(--color-primary),
-        0 0 30px var(--color-accent);
-      transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        box-shadow 0.4s ease,
-        transform 0.2s ease;
-      user-select: none;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .btn-glow:hover,
-    .btn-glow:focus {
+      color: #fff;
       background-color: var(--color-primary);
-      color: #000;
-      box-shadow:
-        0 0 15px var(--color-primary),
-        0 0 50px var(--color-accent);
-      transform: translateY(-3px);
+      border: none;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-align: center;
+      margin-top: auto;
+    }
+    .btn-action:hover, .btn-action:focus {
+      background-color: var(--color-primary-light);
+      transform: translateY(-2px);
       outline: none;
     }
 
@@ -175,210 +162,150 @@
     .card p {
       color: var(--color-text-muted);
       font-style: italic;
-      user-select: text;
+      font-size: 0.95rem;
     }
 
-    @media (max-width: 480px) {
-      .card h3 {
-        font-size: 1.1rem;
-      }
-      .btn-glow {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-      }
-    }
-  </style>
-
-  <main role="main" aria-label="Services">
-    <div class="grid">
-      <div class="card" tabindex="0">
-        <h3>CHECK PMT SCORE</h3>
-        <a class="btn-glow" href="https://texify.xyz/pmt-score" target="_blank" rel="noopener noreferrer" aria-label="Check PMT Score">Check Now</a>
-      </div>
-      <div class="card" tabindex="0">
-        <h3>NETWORK CHECKER</h3>
-        <a class="btn-glow" href="https://operator-checker.onrender.com" target="_blank" rel="noopener noreferrer" aria-label="Check Network">Check Now</a>
-      </div>
-
-      <!-- Additional Services -->
-      <div class="card" tabindex="0">
-        <h3>HIMMAT CARD VERIFICATION</h3>
-        <a class="btn-glow" href="https://dpmis.punjab.gov.pk/himmatcard-verification" target="_blank" rel="noopener noreferrer" aria-label="Himmat Card Verification">Verify Now</a>
-      </div>
-      <div class="card" tabindex="0">
-        <h3>PUNJAB SOCIAL PROTECTION AUTHORITY</h3>
-        <a class="btn-glow" href="https://pspa.punjab.gov.pk/online_eligibility_check" target="_blank" rel="noopener noreferrer" aria-label="Check Punjab Social Protection Eligibility">Check Eligibility</a>
-      </div>
-      <div class="card" tabindex="0">
-        <h3>HEALTH CARD ELIGIBILITY CHECK</h3>
-        <a class="btn-glow" href="https://www.pmhealthprogram.gov.pk/check-your-eligibility/" target="_blank" rel="noopener noreferrer" aria-label="Health Card Eligibility Check">Check Eligibility</a>
-      </div>
-      <div class="card" tabindex="0">
-        <h3>APNI ZAMEEN APNA GHAR PROGRAM</h3>
-        <a class="btn-glow" href="https://azag.punjab.gov.pk/" target="_blank" rel="noopener noreferrer" aria-label="Apni Zameen Apna Ghar Program">Learn More</a>
-      </div>
-      <div class="card" tabindex="0">
-        <h3>RASHAN CARD PROGRAM</h3>
-        <a class="btn-glow" href="https://punjab.gov.pk/node/6441" target="_blank" rel="noopener noreferrer" aria-label="Rashan Card Program">Apply Now</a>
-      </div>
-      <div class="card" tabindex="0">
-        <h3>MINORITY CARD</h3>
-        <a class="btn-glow" href="https://mcard.punjab.gov.pk/login" target="_blank" rel="noopener noreferrer" aria-label="Minority Card Login">Login</a>
-      </div>
-      <div class="card" tabindex="0">
-        <h3>LIVESTOCK CARD</h3>
-        <a class="btn-glow" href="https://punjab.gov.pk/cm-punjab-livestock-card" target="_blank" rel="noopener noreferrer" aria-label="Livestock Card">Apply Now</a>
-      </div>
-      <div class="card" tabindex="0">
-        <h3>KISSAN CARD</h3>
-        <a class="btn-glow" href="https://punjab.gov.pk/cm-kissan-card-scheme" target="_blank" rel="noopener noreferrer" aria-label="Kissan Card Scheme">Apply Now</a>
-      </div>
-      <div class="card" tabindex="0">
-        <h3>DHEE RANI PROGRAM</h3>
-        <a class="btn-glow" href="https://cmp.punjab.gov.pk/" target="_blank" rel="noopener noreferrer" aria-label="Dhee Rani Program">Learn More</a>
-      </div>
-      <div class="card" tabindex="0">
-        <h3>GLOBAL IT CERTIFICATE</h3>
-        <a class="btn-glow" href="https://certifications.pitb.gov.pk/" target="_blank" rel="noopener noreferrer" aria-label="Global IT Certificate">Get Certified</a>
-      </div>
-      <div class="card" tabindex="0">
-        <h3>GREEN TRACTOR SCHEME</h3>
-        <a class="btn-glow" href="https://gts.punjab.gov.pk/login" target="_blank" rel="noopener noreferrer" aria-label="Green Tractor Scheme">Login</a>
-      </div>
-      <div class="card" tabindex="0">
-        <h3>PUNJAB SOCIAL ECONOMIC REGISTRY</h3>
-        <a class="btn-glow" href="https://pser.punjab.gov.pk/register" target="_blank" rel="noopener noreferrer" aria-label="Punjab Social Economic Registry">Register Now</a>
-      </div>
-      <div class="card" tabindex="0">
-        <h3>More Services</h3>
-        <p>Coming Soon...</p>
-      </div>
-    </div>
-  </main>
-    <style>
     /* Mission Section */
-    section.mission {
-      max-width: 720px;
-      margin: 3rem auto 3rem;
-      padding: 0 1rem;
-      text-align: center;
-      user-select: text;
-    }
-
-    section.mission h2 {
-      color: var(--color-primary);
-      font-size: 1.6rem;
+    .mission h2 {
+      color: var(--color-text-dark);
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
       font-weight: 700;
-      margin-bottom: 0.6rem;
-      text-shadow:
-        0 0 10px var(--color-primary),
-        0 0 22px var(--color-primary);
-      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      text-align: center;
     }
-
-    section.mission p {
+    .mission p {
       color: var(--color-text-muted);
-      font-size: 1.1rem;
-      line-height: 1.5;
-      max-width: 600px;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      line-height: 1.7;
+      max-width: 750px;
       margin: 0 auto;
-      user-select: text;
-      text-shadow: 0 0 6px rgba(255 255 255 / 0.1);
+      text-align: center;
     }
 
     /* Helpline Section */
-    section.helplines {
-      max-width: 900px;
-      margin: 0 auto 4rem;
-      padding: 0 1rem;
-      user-select: text;
-    }
-
-    section.helplines h2 {
-      color: var(--color-primary);
-      font-size: 1.7rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
+    .helplines h2 {
+      color: var(--color-text-dark);
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
       text-align: center;
-      text-shadow:
-        0 0 12px var(--color-primary),
-        0 0 28px var(--color-primary);
-      letter-spacing: 0.06em;
     }
-
     .helpline-list {
       list-style: none;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1rem;
-      user-select: text;
     }
-
     .helpline-list li {
       background: var(--color-card-bg);
-      border-radius: 16px;
-      padding: 1rem 1.2rem;
-      box-shadow:
-        0 0 10px var(--color-primary),
-        0 0 20px var(--color-accent);
-      color: var(--color-text-light);
-      font-weight: 700;
-      font-size: 1rem;
+      border-radius: 8px;
+      padding: 1.25rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e9ecef;
+      transition: all 0.3s ease;
       display: flex;
-      flex-direction: column;
-      user-select: text;
-      transition: transform 0.25s ease;
-      cursor: default;
+      align-items: center;
+      gap: 1rem;
     }
-    .helpline-list li:hover,
-    .helpline-list li:focus {
-      transform: translateY(-5px);
+    .helpline-list li:hover, .helpline-list li:focus {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-color: var(--color-primary-light);
       outline: none;
-      box-shadow:
-        0 0 18px var(--color-primary),
-        0 0 38px var(--color-accent);
     }
-
+    .helpline-icon {
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      min-width: 2rem;
+      text-align: center;
+    }
+    .helpline-info {
+      flex-grow: 1;
+    }
     .helpline-title {
       color: var(--color-primary);
-      font-weight: 800;
-      font-size: 1.1rem;
-      margin-bottom: 0.35rem;
-      text-shadow:
-        0 0 8px var(--color-primary);
-    }
-
-    .helpline-number {
-      color: var(--color-accent);
-      font-weight: 700;
+      font-weight: 500;
       font-size: 1rem;
       margin-bottom: 0.25rem;
-      letter-spacing: 0.04em;
-      user-select: text;
-      text-shadow:
-        0 0 8px var(--color-accent);
     }
-
+    .helpline-number {
+      color: var(--color-text-dark);
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
     .helpline-status {
-      color: var(--color-primary);
-      font-weight: 600;
+      color: var(--color-accent);
+      font-weight: 400;
       font-size: 0.9rem;
-      text-shadow:
-        0 0 6px var(--color-primary);
-      user-select: text;
-    }
-
-    @media (max-width: 480px) {
-      .helpline-list {
-        grid-template-columns: 1fr;
-      }
-      .helpline-list li {
-        font-size: 0.95rem;
-      }
     }
   </style>
 
-  <section class="mission" aria-label="Our Mission">
+  <section class="services">
+    <div class="grid">
+      <div class="card animate-slide-up" style="animation-delay: 0.2s;" tabindex="0">
+        <h3>CHECK PMT SCORE</h3>
+        <a class="btn-action" href="https://texify.xyz/pmt-score" target="_blank" rel="noopener noreferrer">Check Now</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 0.3s;" tabindex="0">
+        <h3>NETWORK CHECKER</h3>
+        <a class="btn-action" href="https://operator-checker.onrender.com" target="_blank" rel="noopener noreferrer">Check Now</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 0.4s;" tabindex="0">
+        <h3>HIMMAT CARD VERIFICATION</h3>
+        <a class="btn-action" href="https://dpmis.punjab.gov.pk/himmatcard-verification" target="_blank" rel="noopener noreferrer">Verify Now</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 0.5s;" tabindex="0">
+        <h3>PUNJAB SOCIAL PROTECTION AUTHORITY</h3>
+        <a class="btn-action" href="https://pspa.punjab.gov.pk/online_eligibility_check" target="_blank" rel="noopener noreferrer">Check Eligibility</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 0.6s;" tabindex="0">
+        <h3>HEALTH CARD ELIGIBILITY CHECK</h3>
+        <a class="btn-action" href="https://www.pmhealthprogram.gov.pk/check-your-eligibility/" target="_blank" rel="noopener noreferrer">Check Eligibility</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 0.7s;" tabindex="0">
+        <h3>APNI ZAMEEN APNA GHAR PROGRAM</h3>
+        <a class="btn-action" href="https://azag.punjab.gov.pk/" target="_blank" rel="noopener noreferrer">Learn More</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 0.8s;" tabindex="0">
+        <h3>RASHAN CARD PROGRAM</h3>
+        <a class="btn-action" href="https://punjab.gov.pk/node/6441" target="_blank" rel="noopener noreferrer">Apply Now</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 0.9s;" tabindex="0">
+        <h3>MINORITY CARD</h3>
+        <a class="btn-action" href="https://mcard.punjab.gov.pk/login" target="_blank" rel="noopener noreferrer">Login</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 1.0s;" tabindex="0">
+        <h3>LIVESTOCK CARD</h3>
+        <a class="btn-action" href="https://punjab.gov.pk/cm-punjab-livestock-card" target="_blank" rel="noopener noreferrer">Apply Now</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 1.1s;" tabindex="0">
+        <h3>KISSAN CARD</h3>
+        <a class="btn-action" href="https://punjab.gov.pk/cm-kissan-card-scheme" target="_blank" rel="noopener noreferrer">Apply Now</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 1.2s;" tabindex="0">
+        <h3>DHEE RANI PROGRAM</h3>
+        <a class="btn-action" href="https://cmp.punjab.gov.pk/" target="_blank" rel="noopener noreferrer">Learn More</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 1.3s;" tabindex="0">
+        <h3>GLOBAL IT CERTIFICATE</h3>
+        <a class="btn-action" href="https://certifications.pitb.gov.pk/" target="_blank" rel="noopener noreferrer">Get Certified</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 1.4s;" tabindex="0">
+        <h3>GREEN TRACTOR SCHEME</h3>
+        <a class="btn-action" href="https://gts.punjab.gov.pk/login" target="_blank" rel="noopener noreferrer">Login</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 1.5s;" tabindex="0">
+        <h3>PUNJAB SOCIAL ECONOMIC REGISTRY</h3>
+        <a class="btn-action" href="https://pser.punjab.gov.pk/register" target="_blank" rel="noopener noreferrer">Register Now</a>
+      </div>
+      <div class="card animate-slide-up" style="animation-delay: 1.6s;" tabindex="0">
+        <h3>More Services</h3>
+        <p>Coming Soon...</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="mission animate-slide-up">
     <h2>Our Mission</h2>
     <p>
       Our mission is to provide the latest updates on all Pakistani government schemes,
@@ -386,284 +313,338 @@
     </p>
   </section>
 
-  <section class="helplines" aria-label="Government Helplines">
+  <section class="helplines animate-slide-up" style="animation-delay: 0.2s;">
     <h2>Helplines</h2>
     <ul class="helpline-list" role="list">
       <li tabindex="0">
-        <div class="helpline-title">C&W (Communication & Works)</div>
-        <div class="helpline-number">04299030165</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">C&W (Communication & Works)</div>
+          <div class="helpline-number">04299030165</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Centralized Hotline - PRIDE</div>
-        <div class="helpline-number">1786</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Centralized Hotline - PRIDE</div>
+          <div class="helpline-number">1786</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Chief Minister Complaint Center</div>
-        <div class="helpline-number">0800-02345</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Chief Minister Complaint Center</div>
+          <div class="helpline-number">0800-02345</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Citizen Facilitation Center</div>
-        <div class="helpline-number">0800-09100</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Citizen Facilitation Center</div>
+          <div class="helpline-number">0800-09100</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">CPC - Consumer Protection Council</div>
-        <div class="helpline-number">04299030123</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">CPC - Consumer Protection Council</div>
+          <div class="helpline-number">04299030123</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">DTS - Department of Tourist Services</div>
-        <div class="helpline-number">1421</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">DTS - Department of Tourist Services</div>
+          <div class="helpline-number">1421</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Ehsaas Rashan Riayat Program</div>
-        <div class="helpline-number">0800-05050</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Ehsaas Rashan Riayat Program</div>
+          <div class="helpline-number">0800-05050</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">E- Pay Helpline</div>
-        <div class="helpline-number">04299030100</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">E- Pay Helpline</div>
+          <div class="helpline-number">04299030100</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">E-Procurement</div>
-        <div class="helpline-number">04299030160</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">E-Procurement</div>
+          <div class="helpline-number">04299030160</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">e-Rozgar Training Program / NFTP</div>
-        <div class="helpline-number">0800-09897 / 04299030127</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">e-Rozgar Training Program / NFTP</div>
+          <div class="helpline-number">0800-09897 / 04299030127</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">E-Stamping Punjab</div>
-        <div class="helpline-number">0800-08100</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">E-Stamping Punjab</div>
+          <div class="helpline-number">0800-08100</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">E-Stamping Sindh</div>
-        <div class="helpline-number">0800-77000</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">E-Stamping Sindh</div>
+          <div class="helpline-number">0800-77000</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Excise & Taxation</div>
-        <div class="helpline-number">0800-08786</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Excise & Taxation</div>
+          <div class="helpline-number">0800-08786</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Labour & HR</div>
-        <div class="helpline-number">04299030062</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Labour & HR</div>
+          <div class="helpline-number">04299030062</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">LHC - Lahore High Court</div>
-        <div class="helpline-number">1134</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">LHC - Lahore High Court</div>
+          <div class="helpline-number">1134</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Livestock & Dairy Development</div>
-        <div class="helpline-number">0800-78686</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Livestock & Dairy Development</div>
+          <div class="helpline-number">0800-78686</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Mines & Minerals</div>
-        <div class="helpline-number">04299030122</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Mines & Minerals</div>
+          <div class="helpline-number">04299030122</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Overseas Pakistani Commission</div>
-        <div class="helpline-number">111-672-672</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Overseas Pakistani Commission</div>
+          <div class="helpline-number">111-672-672</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Parks & Horticulture Authority</div>
-        <div class="helpline-number">1399</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Parks & Horticulture Authority</div>
+          <div class="helpline-number">1399</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">PEPRIS - School Education</div>
-        <div class="helpline-number">111-112-020</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">PEPRIS - School Education</div>
+          <div class="helpline-number">111-112-020</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">PHOTA - Punjab Human Organ Transplant</div>
-        <div class="helpline-number">04299030147 - 1109</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">PHOTA - Punjab Human Organ Transplant</div>
+          <div class="helpline-number">04299030147 - 1109</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Population Welfare Department</div>
-        <div class="helpline-number">0800-79300</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Population Welfare Department</div>
+          <div class="helpline-number">0800-79300</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Punjab Health Line</div>
-        <div class="helpline-number">0800-99000</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Punjab Health Line</div>
+          <div class="helpline-number">0800-99000</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Punjab Metro Bus</div>
-        <div class="helpline-number">111-222-627</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Punjab Metro Bus</div>
+          <div class="helpline-number">111-222-627</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">RUDA - Ravi Urban Development Authority</div>
-        <div class="helpline-number">04299030180</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">RUDA - Ravi Urban Development Authority</div>
+          <div class="helpline-number">04299030180</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">School Education</div>
-        <div class="helpline-number">111-112-020</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">School Education</div>
+          <div class="helpline-number">111-112-020</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">TEVTA</div>
-        <div class="helpline-number">0800-83882</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">TEVTA</div>
+          <div class="helpline-number">0800-83882</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">Traffic Police</div>
-        <div class="helpline-number">04299030130</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">Traffic Police</div>
+          <div class="helpline-number">04299030130</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">UHS - University of Health Sciences</div>
-        <div class="helpline-number">111-333-366</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">UHS - University of Health Sciences</div>
+          <div class="helpline-number">111-333-366</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
       <li tabindex="0">
-        <div class="helpline-title">WASA</div>
-        <div class="helpline-number">1334</div>
+        <i class="fas fa-phone-volume helpline-icon"></i>
+        <div class="helpline-info">
+          <div class="helpline-title">WASA</div>
+          <div class="helpline-number">1334</div>
+        </div>
         <div class="helpline-status">Active</div>
       </li>
     </ul>
-      </section>
-          <style>
+  </section>
+    <style>
     /* Contact Section */
     .contact-section {
-      max-width: 600px;
-      margin: 0 auto 3rem;
+      max-width: 800px;
+      margin: 0 auto 4rem;
       padding: 0 1rem;
-      user-select: text;
     }
 
     .contact-section h2 {
-      color: var(--color-primary);
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
+      color: var(--color-text-dark);
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      margin-bottom: 1.5rem;
       font-weight: 700;
       text-align: center;
-      text-shadow:
-        0 0 8px var(--color-primary),
-        0 0 20px var(--color-primary);
-      letter-spacing: 0.02em;
-      user-select: text;
     }
 
     form#contactForm {
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
+      gap: 1rem;
+      background: var(--color-card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e9ecef;
     }
 
     input[type="text"],
     input[type="email"],
     textarea {
-      background: rgba(255 255 255 / 0.05);
-      border: 2px solid transparent;
-      border-radius: 14px;
-      padding: 0.85rem 1.2rem;
-      color: var(--color-text-light);
+      background: var(--color-bg-gray);
+      border: 1px solid #ced4da;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      color: var(--color-text-dark);
       font-size: 1rem;
-      font-weight: 600;
-      box-shadow:
-        0 0 8px var(--color-primary);
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      font-weight: 400;
+      transition: all 0.3s ease;
       resize: vertical;
-      min-height: 3.5rem;
-      user-select: text;
+      min-height: 2.75rem;
     }
 
     input[type="text"]:focus,
     input[type="email"]:focus,
     textarea:focus {
       outline: none;
-      border-color: var(--color-primary);
-      box-shadow:
-        0 0 15px var(--color-primary),
-        0 0 40px var(--color-accent);
-      background: rgba(255 255 255 / 0.12);
+      border-color: var(--color-primary-light);
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
 
-    textarea {
-      min-height: 120px;
-    }
+    textarea { min-height: 120px; }
 
-    button[type="submit"].btn-glow {
-      background-color: transparent;
-      border: 2.5px solid var(--color-primary);
-      padding: 0.75rem 1.5rem;
-      border-radius: 50px;
-      color: var(--color-primary);
-      font-weight: 700;
-      font-size: 1.15rem;
-      cursor: pointer;
-      box-shadow:
-        0 0 15px var(--color-primary);
-      transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        box-shadow 0.4s ease,
-        transform 0.2s ease;
-      user-select: none;
-    }
-
-    button[type="submit"].btn-glow:hover,
-    button[type="submit"].btn-glow:focus {
+    button[type="submit"].btn-action {
       background-color: var(--color-primary);
-      color: #000;
-      box-shadow:
-        0 0 25px var(--color-primary),
-        0 0 60px var(--color-accent);
-      transform: translateY(-3px);
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button[type="submit"].btn-action:hover, button[type="submit"].btn-action:focus {
+      background-color: var(--color-primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
       outline: none;
     }
 
     #formMsg {
       text-align: center;
       margin-top: 1rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      text-shadow:
-        0 0 8px var(--color-primary),
-        0 0 25px var(--color-primary);
-      user-select: text;
-    }
-
-    @media (max-width: 480px) {
-      input[type="text"],
-      input[type="email"],
-      textarea {
-        font-size: 0.95rem;
-        min-height: 3.2rem;
-      }
-      button[type="submit"].btn-glow {
-        font-size: 1rem;
-        padding: 0.65rem 1.3rem;
-      }
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--color-accent);
     }
   </style>
 
-  <section class="contact-section" aria-label="Contact Us">
+  <section class="contact-section animate-slide-up" style="animation-delay: 0.4s;" aria-label="Contact Us">
     <h2>Contact Us</h2>
     <form id="contactForm" novalidate>
       <input type="text" name="name" placeholder="Your Name" required aria-required="true" />
       <input type="email" name="email" placeholder="Your Email" required aria-required="true" />
       <textarea name="message" placeholder="Your Message" required aria-required="true"></textarea>
-      <button type="submit" class="btn-glow" aria-label="Send Message">Send</button>
+      <button type="submit" class="btn-action">Send</button>
       <div id="formMsg" role="alert" aria-live="polite"></div>
     </form>
   </section>
@@ -675,6 +656,8 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       formMsg.textContent = "Sending...";
+      formMsg.style.color = "var(--color-primary)";
+      
       setTimeout(() => {
         formMsg.textContent = "Thank you! We'll reply soon.";
         form.reset();
@@ -685,75 +668,49 @@
     /* Fixed Join Channel Button */
     .fixed-button {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: linear-gradient(45deg, var(--color-accent), var(--color-primary));
-      color: #000;
-      padding: 0.75rem 1.6rem;
-      border-radius: 40px;
-      font-weight: 800;
+      bottom: 1.5rem;
+      right: 1rem;
+      background-color: var(--color-accent);
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 500;
       font-size: 1rem;
       text-decoration: none;
-      box-shadow:
-        0 0 12px var(--color-accent),
-        0 0 35px var(--color-primary);
-      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
       z-index: 9999;
-      user-select: none;
-      cursor: pointer;
     }
 
-    .fixed-button:hover,
-    .fixed-button:focus {
-      box-shadow:
-        0 0 25px var(--color-accent),
-        0 0 55px var(--color-primary);
+    .fixed-button:hover, .fixed-button:focus {
+      background-color: #218838;
       transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       outline: none;
-      color: #fff;
     }
 
     /* Footer */
     footer {
-      max-width: 900px;
-      margin: 0 auto 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto 1rem;
       padding: 0 1rem;
       text-align: center;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--color-text-muted);
       user-select: none;
-      letter-spacing: 0.04em;
-      text-shadow: 0 0 5px rgba(255 255 255 / 0.1);
+      font-weight: 400;
     }
 
     footer span {
-      font-weight: 700;
+      font-weight: 500;
       color: var(--color-primary);
-      text-shadow:
-        0 0 8px var(--color-primary),
-        0 0 20px var(--color-primary);
-    }
-
-    @media (max-width: 480px) {
-      .fixed-button {
-        font-size: 0.9rem;
-        padding: 0.6rem 1.3rem;
-        bottom: 15px;
-        right: 15px;
-      }
-
-      footer {
-        font-size: 0.85rem;
-        padding: 0 0.5rem;
-      }
     }
   </style>
 
-  <a href="https://whatsapp.com/channel/0029Vb9shWp4o7qPSrCXS603" class="fixed-button" target="_blank" rel="noopener noreferrer" aria-label="Join WhatsApp Channel">Join Channel</a>
+  <a href="https://whatsapp.com/channel/0029Vb9shWp4o7qPSrCXS603" class="fixed-button animate-fade-in" style="animation-delay: 1.8s;" target="_blank" rel="noopener noreferrer">Join Channel</a>
 
-  <footer>
+  <footer class="animate-fade-in" style="animation-delay: 1.9s;">
     <span>© 2025 PAK Updates.</span> All rights reserved.
   </footer>
 </body>
 </html>
-
