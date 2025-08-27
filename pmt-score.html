@@ -1,103 +1,106 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>🌟 PMT اسکور چیک کریں - AI Glassmorphism Edition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌌 PMT Score Checker - Neon Cyberpunk Edition</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap');
+
+    :root {
+      --neon-blue: #00f7ff;
+      --neon-pink: #ff00ff;
+      --dark-bg: #0d0a1b;
+      --card-bg: rgba(26, 26, 51, 0.75);
+      --input-bg: rgba(30, 30, 60, 0.9);
+      --btn-bg: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
+      --text-color: #e0f7fa;
+      --border-glow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-pink);
+    }
 
     * {
       box-sizing: border-box;
-      font-family: 'Cairo', sans-serif;
+      font-family: 'Share Tech Mono', monospace;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    html, body {
-      margin: 0; padding: 0;
-      height: 100%;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      background-size: 400% 400%;
-      animation: bgGradient 20s ease infinite;
-      color: #e0f7fa;
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      direction: rtl;
-      text-align: right;
+      background-color: var(--dark-bg);
+      background-image:
+        radial-gradient(circle, rgba(0, 247, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 0, 255, 0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+      color: var(--text-color);
+      text-align: center;
       padding: 20px;
     }
 
-    @keyframes bgGradient {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 25px;
-      box-shadow:
-        0 4px 30px rgba(0, 255, 255, 0.3),
-        0 0 10px rgba(0, 255, 255, 0.5),
-        inset 0 0 10px rgba(0, 255, 255, 0.2);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(0, 255, 255, 0.3);
-      max-width: 420px;
+    .container {
+      position: relative;
+      max-width: 450px;
       width: 100%;
-      padding: 30px 25px 40px;
-      animation: float 6s ease-in-out infinite;
-      transition: box-shadow 0.3s ease;
-    }
-    .card:hover {
-      box-shadow:
-        0 6px 40px rgba(0, 255, 255, 0.6),
-        0 0 25px rgba(0, 255, 255, 0.7),
-        inset 0 0 15px rgba(0, 255, 255, 0.3);
-      cursor: pointer;
+      padding: 40px;
+      background: var(--card-bg);
+      border-radius: 20px;
+      border: 2px solid rgba(0, 247, 255, 0.5);
+      box-shadow: 0 0 25px var(--neon-blue), 0 0 50px var(--neon-pink);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      animation: neon-pulse 5s infinite ease-in-out;
     }
 
-    @keyframes float {
-      0%,100%{transform: translateY(0);}
-      50%{transform: translateY(-15px);}
+    @keyframes neon-pulse {
+      0%, 100% { box-shadow: 0 0 25px var(--neon-blue), 0 0 50px var(--neon-pink); }
+      50% { box-shadow: 0 0 35px var(--neon-blue), 0 0 70px var(--neon-pink); }
     }
 
     h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: var(--neon-blue);
+      text-shadow: var(--border-glow);
       margin: 0 0 1.5rem;
-      font-size: 2.1rem;
-      color: #00e5ff;
-      text-shadow: 0 0 12px #00e5ff;
-      letter-spacing: 0.04em;
-      font-weight: 700;
+      letter-spacing: 0.1em;
+      animation: text-glow 2s infinite alternate;
+    }
+
+    @keyframes text-glow {
+      from { text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue); }
+      to { text-shadow: 0 0 15px var(--neon-blue), 0 0 25px var(--neon-blue); }
+    }
+
+    .input-group {
+      margin-bottom: 2rem;
     }
 
     input[type="text"] {
       width: 100%;
       padding: 1rem;
-      border-radius: 15px;
-      border: none;
-      background: rgba(255, 255, 255, 0.15);
-      color: #00e5ff;
+      border: 2px solid var(--neon-blue);
+      border-radius: 10px;
+      background: var(--input-bg);
+      color: var(--neon-pink);
       font-size: 1.1rem;
       text-align: center;
-      box-shadow:
-        inset 0 0 10px rgba(0, 255, 255, 0.4),
-        0 0 10px rgba(0, 255, 255, 0.4);
-      transition: background 0.3s ease;
-      margin-bottom: 1.5rem;
+      box-shadow: var(--border-glow);
+      transition: border-color 0.3s, box-shadow 0.3s;
     }
     input[type="text"]::placeholder {
-      color: #9be9ff;
-      font-weight: 600;
+      color: var(--neon-pink);
+      opacity: 0.7;
     }
     input[type="text"]:focus {
       outline: none;
-      background: rgba(255, 255, 255, 0.3);
-      box-shadow:
-        inset 0 0 14px rgba(0, 255, 255, 0.7),
-        0 0 20px rgba(0, 255, 255, 0.8);
+      border-color: var(--neon-pink);
+      box-shadow: 0 0 15px var(--neon-pink), 0 0 30px var(--neon-pink);
     }
 
     button {
@@ -105,171 +108,109 @@
       padding: 1rem;
       font-size: 1.2rem;
       font-weight: 700;
-      color: #002233;
-      background: linear-gradient(90deg, #00fff7, #00c3ff);
+      color: var(--dark-bg);
+      background: var(--btn-bg);
       border: none;
-      border-radius: 15px;
-      box-shadow:
-        0 0 15px #00fff7,
-        0 0 25px #00c3ff;
+      border-radius: 10px;
       cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      user-select: none;
+      box-shadow: 0 0 15px var(--neon-blue), 0 0 25px var(--neon-pink);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
     }
     button:hover {
-      transform: scale(1.08);
-      box-shadow:
-        0 0 25px #00fff7,
-        0 0 40px #00c3ff;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px var(--neon-blue), 0 0 40px var(--neon-pink);
     }
     button:active {
-      transform: scale(0.95);
-      box-shadow:
-        0 0 12px #00fff7,
-        0 0 20px #00c3ff;
+      transform: scale(0.98);
+      box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-pink);
+    }
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+      transform: scale(1);
+      box-shadow: none;
     }
 
     .result {
-      margin-top: 1.8rem;
-      background: rgba(0, 0, 0, 0.35);
-      border-radius: 18px;
-      box-shadow:
-        0 0 20px #00c3ff;
-      padding: 1.2rem 1.5rem;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #b1fbff;
-      user-select: text;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      border: 1px dashed var(--neon-blue);
+      box-shadow: inset 0 0 10px var(--neon-pink), 0 0 15px rgba(255, 0, 255, 0.5);
+      line-height: 1.8;
+      color: #99ffcc;
+      text-align: left;
     }
     .result strong {
-      color: #00f1ff;
+      color: var(--neon-blue);
     }
 
     .eligibility {
-      margin-top: 0.9rem;
       font-size: 1.2rem;
       font-weight: 700;
-      color: #aaffaa;
-      text-shadow: 0 0 12px #00ff77;
+      margin-top: 1rem;
+      color: #00ffaa;
+      text-shadow: 0 0 10px #00ffaa;
     }
     .eligibility.not-eligible {
-      color: #ff7a7a;
-      text-shadow: 0 0 12px #ff4c4c;
+      color: #ff6666;
+      text-shadow: 0 0 10px #ff6666;
     }
 
     .error {
       margin-top: 1rem;
       font-size: 1rem;
-      color: #ff6b6b;
-      text-shadow: 0 0 10px #ff3b3b;
-      font-weight: 600;
-      user-select: none;
-      text-align: center;
+      color: #ff6666;
+      text-shadow: 0 0 8px #ff6666;
     }
 
-    .whatsapp-button {
-      margin-top: 2rem;
-      text-align: center;
+    .loader {
+      border: 4px solid var(--neon-blue);
+      border-top: 4px solid var(--neon-pink);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 1.5rem auto 0;
     }
-    .whatsapp-button a {
-      display: inline-block;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #00ffff;
-      background: rgba(0, 255, 255, 0.15);
-      border-radius: 25px;
-      box-shadow:
-        0 0 20px #00fff7,
-        0 0 30px #00c3ff;
-      text-decoration: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
-    }
-    .whatsapp-button a:hover {
-      transform: scale(1.1);
-      box-shadow:
-        0 0 35px #00fff7,
-        0 0 45px #00c3ff;
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .footer {
       margin-top: 3rem;
-      font-size: 1.25rem;
-      color: #00f9ff;
-      text-shadow: 0 0 15px #00d0ff;
-      user-select: none;
-    }
-
-    /* Loader */
-    .loader {
-      border: 5px solid rgba(0, 255, 255, 0.2);
-      border-top: 5px solid #00fff7;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      animation: spin 1.3s linear infinite;
-      margin: 1.5rem auto 0;
-    }
-    @keyframes spin {
-      0% {transform: rotate(0deg);}
-      100% {transform: rotate(360deg);}
-    }
-
-    @media (max-width: 480px) {
-      .card {
-        padding: 1.5rem 1.2rem 2.5rem;
-      }
-      h1 {
-        font-size: 1.6rem;
-      }
-      input[type="text"] {
-        font-size: 1rem;
-      }
-      button {
-        font-size: 1.1rem;
-        padding: 0.85rem;
-      }
-      .result {
-        font-size: 1rem;
-      }
-      .whatsapp-button a {
-        font-size: 1rem;
-        padding: 0.85rem 1.5rem;
-      }
-      .footer {
-        font-size: 1rem;
-      }
+      font-size: 0.9rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <div class="card" role="main" aria-label="PMT اسکور چیک کریں">
-    <h1>🔍 PMT اسکور چیک کریں</h1>
-    <input
-      type="text"
-      id="cnic"
-      placeholder="13 ہندسوں والا شناختی کارڈ نمبر"
-      maxlength="13"
-      aria-label="شناختی کارڈ نمبر درج کریں"
-      pattern="[0-9]{13}"
-      inputmode="numeric"
-    />
-    <button id="checkBtn" aria-live="polite">اسکور چیک کریں</button>
+  <div class="container" role="main" aria-label="PMT Score Checker">
+    <h1>PMT SCORE CHECKER</h1>
+    <div class="input-group">
+      <input
+        type="text"
+        id="cnic"
+        placeholder="Enter 13-digit CNIC"
+        maxlength="13"
+        aria-label="Enter 13-digit CNIC number"
+        pattern="[0-9]{13}"
+        inputmode="numeric"
+      />
+    </div>
+    <button id="checkBtn" aria-live="polite">CHECK SCORE</button>
 
     <div id="output" class="result" hidden aria-live="polite" role="region"></div>
     <div id="error" class="error" aria-live="assertive"></div>
     <div id="loader" class="loader" style="display:none;" aria-hidden="true"></div>
   </div>
 
-  <div class="whatsapp-button">
-    <a href="https://whatsapp.com/channel/0029Vb9shWp4o7qPSrCXS603" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp چینل جوائن کریں">
-      📢 WhatsApp چینل جوائن کریں
-    </a>
-  </div>
-
   <div class="footer">
-    💖 ہماری ویب سائٹ وزٹ کرنے کا شکریہ!
+    A project by &copy; 2024 Tech Solutions
   </div>
 
   <script>
@@ -286,13 +227,13 @@
       errorBox.textContent = '';
 
       if (!/^[0-9]{13}$/.test(cnic)) {
-        errorBox.textContent = '⚠️ براہ کرم 13 ہندسوں والا درست CNIC درج کریں۔';
+        errorBox.textContent = '⚠️ Please enter a valid 13-digit CNIC.';
         return;
       }
 
       btn.disabled = true;
       loader.style.display = 'block';
-      btn.textContent = 'چیک ہو رہا ہے...';
+      btn.textContent = 'CHECKING...';
 
       try {
         const response = await fetch(`https://api-schemes.government.com.pk/api/pmt-score/get-score?cnic=${cnic}`);
@@ -300,7 +241,7 @@
 
         btn.disabled = false;
         loader.style.display = 'none';
-        btn.textContent = 'اسکور چیک کریں';
+        btn.textContent = 'CHECK SCORE';
 
         if (data.status && data.data?.found) {
           const { cnic, score, id } = data.data;
@@ -308,30 +249,29 @@
           let eligibilityClass = '';
 
           if (Number(score) < 32) {
-            eligibilityText = '✅ آپ گورنمنٹ اسکیمز کے لیے اہل ہیں';
+            eligibilityText = '✅ Eligible for Government Schemes';
             eligibilityClass = 'eligibility';
           } else {
-            eligibilityText = '❌ آپ گورنمنٹ اسکیمز کے لیے نااہل ہیں';
+            eligibilityText = '❌ Not Eligible for Government Schemes';
             eligibilityClass = 'eligibility not-eligible';
           }
 
           output.innerHTML = `
             <strong>CNIC:</strong> ${cnic}<br />
-            <strong>PMT اسکور:</strong> ${score}<br />
+            <strong>PMT Score:</strong> ${score}<br />
             <strong>ID:</strong> ${id}<br />
             <span class="${eligibilityClass}">${eligibilityText}</span>
           `;
           output.hidden = false;
-          errorBox.textContent = '';
         } else {
           output.hidden = true;
-          errorBox.textContent = '📭 آپ کا PMT اسکور موجود نہیں۔';
+          errorBox.textContent = '📭 Your PMT score is not available.';
         }
       } catch (error) {
         btn.disabled = false;
         loader.style.display = 'none';
-        btn.textContent = 'اسکور چیک کریں';
-        errorBox.textContent = '❌ سرور سے ڈیٹا حاصل نہیں ہو سکا۔ دوبارہ کوشش کریں۔';
+        btn.textContent = 'CHECK SCORE';
+        errorBox.textContent = '❌ Failed to fetch data from the server. Please try again.';
       }
     });
   </script>
