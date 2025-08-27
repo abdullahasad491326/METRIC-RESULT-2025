@@ -16,6 +16,7 @@
       --btn-bg: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
       --text-color: #e0f7fa;
       --border-glow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-pink);
+      --whatsapp-green: #25d366;
     }
 
     * {
@@ -181,10 +182,29 @@
       100% { transform: rotate(360deg); }
     }
 
-    .footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #888;
+    .whatsapp-button {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--whatsapp-green);
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      box-shadow: 0 0 15px var(--whatsapp-green);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px var(--whatsapp-green), 0 0 40px rgba(37, 211, 102, 0.7);
+    }
+    .whatsapp-button:active {
+      transform: scale(0.95);
+    }
+    .whatsapp-button::before {
+      content: '📢 ';
     }
   </style>
 </head>
@@ -209,9 +229,9 @@
     <div id="loader" class="loader" style="display:none;" aria-hidden="true"></div>
   </div>
 
-  <div class="footer">
-    A project by &copy; 2024 Tech Solutions
-  </div>
+  <a href="https://whatsapp.com/channel/0029Vb9shWp4o7qPSrCXS603" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Join our WhatsApp Channel">
+    Join Our Channel
+  </a>
 
   <script>
     const btn = document.getElementById('checkBtn');
